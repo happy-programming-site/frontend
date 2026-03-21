@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import styles from "./Contact.module.css";
 
 const INFO = [
@@ -24,13 +25,34 @@ export default function Contact() {
     message: "",
   });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSent(true);
+    setLoading(true);
+    try {
+      await emailjs.send(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        {
+          from_name: `${form.firstName} ${form.lastName}`,
+          email: form.email,
+          phone: form.phone,
+          grade: form.grade,
+          interest: form.interest,
+          message: form.message,
+        },
+        "YOUR_PUBLIC_KEY",
+      );
+      setSent(true);
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -162,8 +184,13 @@ export default function Contact() {
                   rows={3}
                 />
               </div>
-              <button type='submit' className={styles.submit}>
-                Send Message ✦
+
+              <button
+                type='submit'
+                className={styles.submit}
+                disabled={loading}
+              >
+                {loading ? "Sending..." : "Send Message ✦"}
               </button>
             </form>
           )}
