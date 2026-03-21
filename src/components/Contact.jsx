@@ -35,8 +35,8 @@ export default function Contact() {
     setLoading(true);
     try {
       await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_qu5aqcf",
+        "template_hnijil2",
         {
           from_name: `${form.firstName} ${form.lastName}`,
           email: form.email,
