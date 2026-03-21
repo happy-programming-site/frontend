@@ -45,7 +45,7 @@ export default function Contact() {
           interest: form.interest,
           message: form.message,
         },
-        "YOUR_PUBLIC_KEY",
+        "JONB48oxCEi-3bv9i",
       );
       setSent(true);
     } catch (error) {
