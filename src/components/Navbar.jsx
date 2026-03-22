@@ -31,7 +31,7 @@ export default function Navbar() {
         </li>
       </ul>
       <a href='#contact' className={styles.cta}>
-        Enroll Now
+        Contact Us
       </a>
     </nav>
   );

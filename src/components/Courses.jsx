@@ -1,10 +1,18 @@
-// REPLACE WITH these 3 lines:
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Courses.module.css";
-import { Link } from "react-router-dom";
 import { COURSES } from "../data/courses";
 
-
 export default function Courses() {
+  const [selectedCourse, setSelectedCourse] = useState("");
+  const navigate = useNavigate();
+
+  function handleEnroll() {
+    if (selectedCourse) {
+      navigate(`/enroll/${encodeURIComponent(selectedCourse)}`);
+    }
+  }
+
   return (
     <section id='courses' className={styles.section}>
       <div className={`${styles.top} reveal`}>
@@ -12,17 +20,33 @@ export default function Courses() {
           <div className='section-label'>
             <span className={styles.fire}>🔥</span>
             <span className={styles.summerLink}>2026 Summer Camp</span>{" "}
-            {/* added */}
           </div>
-          {/* <h2>Choose Your Path</h2> */}
           <p className='section-sub'>
             Every course is project-based and taught by working engineers. No
             boring lectures.
           </p>
         </div>
-        <a href='#contact' className='btn-primary'>
-          View All →
-        </a>
+        <div className={styles.enrollDropdown}>
+          <select
+            className={styles.dropdownSelect}
+            value={selectedCourse}
+            onChange={(e) => setSelectedCourse(e.target.value)}
+          >
+            <option value="">View All Courses</option>
+            {COURSES.map((c) => (
+              <option key={c.title} value={c.title}>
+                {c.icon} {c.title}
+              </option>
+            ))}
+          </select>
+          <button
+            className='btn-primary'
+            onClick={handleEnroll}
+            disabled={!selectedCourse}
+          >
+            Enroll →
+          </button>
+        </div>
       </div>
       <div className={styles.grid}>
         {COURSES.map((c) => (
@@ -51,10 +75,12 @@ export default function Courses() {
                   price: {c.price}
                 </span>
               )}
-
-              <Link to={`/enroll/${encodeURIComponent(c.title)}`} className={styles.link}>
-               Enroll → 
-               </Link>
+              <Link
+                to={`/enroll/${encodeURIComponent(c.title)}`}
+                className={styles.link}
+              >
+                Enroll →
+              </Link>
             </div>
           </div>
         ))}

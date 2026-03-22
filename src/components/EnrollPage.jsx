@@ -3,7 +3,13 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 import { COURSES } from "../data/courses";
 import styles from "./EnrollPage.module.css";
 
-const GRADES = ["7th", "8th", "9th", "10th", "11th", "12th"];
+const GRADES = ["K", "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th", "10th", "11th", "12th"];
+
+const PAYMENT_METHODS = [
+  { id: "zelle", label: "Zelle", detail: "703-300-0061" },
+  { id: "paypal", label: "PayPal", detail: "zhenhepan@gmail.com" },
+  { id: "check", label: "Check", detail: "Make check payable to Happy EduHub, LLC" },
+];
 
 export default function EnrollPage() {
   const { courseTitle } = useParams();
@@ -21,6 +27,7 @@ export default function EnrollPage() {
     parentName: "",
     parentEmail: "",
     parentPhone: "",
+    payment: "",
   });
   const [errors, setErrors] = useState({});
 
@@ -48,6 +55,7 @@ export default function EnrollPage() {
     else if (!/\S+@\S+\.\S+/.test(form.parentEmail)) newErrors.parentEmail = "Invalid email";
     if (!form.parentPhone.trim()) newErrors.parentPhone = "Required";
     if (!selectedSlot) newErrors.slot = "Please select a time slot";
+    if (!form.payment) newErrors.payment = "Please select a payment method";
     return newErrors;
   }
 
@@ -74,6 +82,7 @@ export default function EnrollPage() {
             <span>{slot.label}</span>
             <span>{slot.time}</span>
             <span>{slot.dates}</span>
+            <span>Payment: {form.payment.charAt(0).toUpperCase() + form.payment.slice(1)}</span>
           </div>
           <p className={styles.successNote}>
             We'll send confirmation details to <strong>{form.parentEmail}</strong>.
@@ -225,6 +234,34 @@ export default function EnrollPage() {
               {errors.parentPhone && <p className={styles.error}>{errors.parentPhone}</p>}
             </div>
           </div>
+        </div>
+
+        {/* Payment */}
+        <h2 className={styles.slotsHeading}>Payment method</h2>
+        <div className={styles.formSection}>
+          {PAYMENT_METHODS.map((method) => (
+            <label
+              key={method.id}
+              className={`${styles.slot} ${form.payment === method.id ? styles.slotSelected : ""}`}
+            >
+              <input
+                type='radio'
+                name='payment'
+                value={method.id}
+                checked={form.payment === method.id}
+                onChange={handleChange}
+                className={styles.radioInput}
+              />
+              <div className={styles.radioCircle}>
+                {form.payment === method.id && <div className={styles.radioDot} />}
+              </div>
+              <div className={styles.slotInfo}>
+                <span className={styles.slotLabel}>{method.label}</span>
+                <span className={styles.slotTime}>{method.detail}</span>
+              </div>
+            </label>
+          ))}
+          {errors.payment && <p className={styles.error}>{errors.payment}</p>}
         </div>
 
         {/* Confirm */}
