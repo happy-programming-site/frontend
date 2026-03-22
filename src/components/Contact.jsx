@@ -190,7 +190,7 @@ export default function Contact() {
                 className={styles.submit}
                 disabled={loading}
               >
-                {loading ? "Sending..." : "Send Message 🚀"}
+                {loading ? "Registering..." : "Register Now 🚀"}
               </button>
             </form>
           )}
