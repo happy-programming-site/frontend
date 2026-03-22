@@ -15,7 +15,7 @@
 }
 
 .features {
-  margin-top: 36px;
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
 }
@@ -23,99 +23,103 @@
 .feat {
   display: flex;
   gap: 16px;
-  padding: 22px 0;
-  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+  border-bottom: 2px dashed var(--border);
   align-items: flex-start;
 }
-.feat:first-child { border-top: 1px solid var(--border); }
+.feat:first-child { border-top: 2px dashed var(--border); }
 
 .featIcon {
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  background: rgba(0,245,255,0.07);
-  border: 1px solid rgba(0,245,255,0.15);
+  width: 42px; height: 42px;
+  border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; flex-shrink: 0;
+  font-size: 1.1rem; flex-shrink: 0;
+  border: 2px solid;
 }
 
-.feat h4 { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
-.feat p { font-size: 0.84rem; color: var(--muted); line-height: 1.6; }
+.feat h4 { font-weight: 800; font-size: 0.95rem; margin-bottom: 4px; }
+.feat p  { font-size: 0.84rem; color: var(--muted); line-height: 1.6; font-weight: 600; }
 
 .visual {
-  background: linear-gradient(145deg, rgba(155,93,255,0.08), rgba(0,245,255,0.05));
-  border: 1px solid var(--border);
-  border-radius: 20px;
+  background: white;
+  border: 2.5px solid var(--border);
+  border-radius: var(--radius-lg);
   padding: 36px;
+  box-shadow: 6px 6px 0 var(--border);
 }
 
 .mentorCard {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
 }
 
 .avatar {
-  width: 54px; height: 54px;
+  width: 52px; height: 52px;
   border-radius: 50%;
-  border: 2px solid var(--purple);
+  border: 3px solid var(--purple);
   background: linear-gradient(135deg, var(--purple), var(--pink));
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Orbitron', monospace;
-  font-weight: 700; font-size: 1.1rem; color: #fff; flex-shrink: 0;
+  font-family: 'Fredoka One', cursive;
+  font-weight: 400; font-size: 1.1rem; color: #fff; flex-shrink: 0;
 }
 
-.mentorInfo strong { display: block; font-size: 0.95rem; margin-bottom: 2px; }
-.mentorInfo span { font-size: 0.8rem; color: var(--muted); }
+.mentorInfo strong { display: block; font-size: 0.95rem; margin-bottom: 2px; font-weight: 800; }
+.mentorInfo span   { font-size: 0.8rem; color: var(--muted); font-weight: 600; }
 
 .avail {
   margin-left: auto;
-  background: rgba(0,255,136,0.1);
-  border: 1px solid rgba(0,255,136,0.2);
-  color: var(--green);
-  font-size: 0.7rem; font-weight: 700;
+  background: rgba(45,203,133,0.12);
+  border: 2px solid rgba(45,203,133,0.3);
+  color: var(--mint);
+  font-size: 0.72rem; font-weight: 800;
   padding: 4px 10px; border-radius: 50px; white-space: nowrap;
 }
 
 .detailsGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
 .detail {
-  background: rgba(0,0,0,0.2);
-  border-radius: 12px;
-  padding: 16px;
-  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: 14px;
+  padding: 14px;
+  border: 2px solid var(--border);
 }
 
 .detailLabel {
-  font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 6px;
+  font-size: 0.7rem; font-weight: 800;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 5px;
 }
 
 .detailVal {
-  font-family: 'Orbitron', monospace;
-  font-size: 1.1rem; font-weight: 700; color: var(--cyan);
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.2rem; font-weight: 400; color: var(--coral);
 }
 
 .bookBtn {
   display: block;
   text-align: center;
-  margin-top: 24px;
   padding: 14px;
   border-radius: 50px;
-  background: linear-gradient(135deg, var(--purple), var(--pink));
+  background: var(--coral);
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
   font-size: 0.95rem;
-  transition: opacity 0.2s, transform 0.2s;
+  transition: all 0.15s;
+  box-shadow: 0 4px 0 #c94530;
+  font-family: 'Nunito', sans-serif;
 }
-.bookBtn:hover { opacity: 0.85; transform: translateY(-1px); }
+.bookBtn:hover { transform: translateY(-3px); box-shadow: 0 7px 0 #c94530; }
 
-@media (max-width: 900px) {
-  .inner { grid-template-columns: 1fr; }
-}
+@media (max-width: 900px) { .inner { grid-template-columns: 1fr; } }

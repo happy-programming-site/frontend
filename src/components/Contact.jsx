@@ -7,7 +7,7 @@ const INFO = [
     icon: "📍",
     label: "Location",
     value:
-      "0.3 mile to LongFellow Middle school, Falls Church, VA, 22043 · Also fully online",
+      "0.3 mile to Longfellow Middle school, Falls Church, VA, 22043 · Also fully online",
   },
   { icon: "📧", label: "Email", value: "hello@happyaiacademy.com" },
   { icon: "📞", label: "Phone", value: "(703) 555-0192" },
@@ -86,7 +86,7 @@ export default function Contact() {
 
           {sent ? (
             <div className={styles.success}>
-              <div className={styles.successIcon}>✦</div>
+              <div className={styles.successIcon}>🎉</div>
               <h4>Message sent!</h4>
               <p>
                 We'll get back to you within one business day. Welcome to Happy
@@ -190,7 +190,7 @@ export default function Contact() {
                 className={styles.submit}
                 disabled={loading}
               >
-                {loading ? "Sending..." : "Send Message ✦"}
+                {loading ? "Sending..." : "Send Message 🚀"}
               </button>
             </form>
           )}

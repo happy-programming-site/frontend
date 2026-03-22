@@ -61,20 +61,20 @@ const CODE_LINES = [
 ];
 
 const colorMap = {
-  cyan: "#00F5FF",
-  purple: "#9B5DFF",
-  pink: "#FF2D9B",
-  green: "#00FF88",
+  cyan: "#4A8FE2",
+  purple: "#9B6BFF",
+  pink: "#FF6BA8",
+  green: "#2DCB85",
   white: "#fff",
-  muted: "#6B6B9A",
+  muted: "#8B7E6E",
 };
 
 export default function Hero() {
   return (
     <section className={styles.hero}>
-      <div className={`${styles.glow} ${styles.glow1}`} />
-      <div className={`${styles.glow} ${styles.glow2}`} />
-      <div className={`${styles.glow} ${styles.glow3}`} />
+      <div className={styles.blob1} />
+      <div className={styles.blob2} />
+      <div className={styles.blob3} />
       <div className={styles.inner}>
         <div className={styles.content}>
           <div className={styles.tag}>

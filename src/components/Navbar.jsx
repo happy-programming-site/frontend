@@ -17,9 +17,9 @@ export default function Navbar() {
           </a>
         </li>
 
-        <li>
+        {/* <li>
           <a href='#pricing'>Pricing</a>
-        </li>
+        </li> */}
         <li>
           <a href='#private'>Private</a>
         </li>

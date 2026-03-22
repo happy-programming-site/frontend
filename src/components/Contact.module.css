@@ -18,7 +18,7 @@
   margin-top: 36px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .infoItem {
@@ -28,36 +28,49 @@
 }
 
 .infoIcon {
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  background: rgba(0,245,255,0.07);
-  border: 1px solid rgba(0,245,255,0.15);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: white;
+  border: 2.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
 }
 
-.infoItem h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 2px; }
-.infoItem p  { font-size: 0.82rem; color: var(--muted); }
+.infoItem h4 {
+  font-size: 0.88rem;
+  font-weight: 800;
+  margin-bottom: 2px;
+}
+.infoItem p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 600;
+}
 
-/* Form card */
 .formCard {
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
+  border: 2.5px solid var(--border);
+  border-radius: var(--radius-lg);
   padding: 36px;
+  box-shadow: 6px 6px 0 var(--border);
 }
 
 .formCard h3 {
-  font-family: 'Orbitron', monospace;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.4rem;
+  font-weight: 400;
   margin-bottom: 6px;
 }
 
 .formSub {
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   color: var(--muted);
-  margin-bottom: 28px;
+  margin-bottom: 26px;
+  font-weight: 600;
 }
 
 .row {
@@ -65,7 +78,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
-
 .fg {
   margin-bottom: 14px;
 }
@@ -73,8 +85,8 @@
 .fg label {
   display: block;
   font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 800;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 7px;
@@ -85,30 +97,29 @@
 .fg textarea {
   width: 100%;
   padding: 12px 16px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.88rem;
-  background: rgba(255,255,255,0.03);
+  border: 2.5px solid var(--border);
+  border-radius: 12px;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  background: var(--bg);
   color: var(--text);
-  transition: border-color 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
   resize: vertical;
 }
-
 .fg input::placeholder,
 .fg textarea::placeholder {
-  color: var(--muted);
+  color: #c4b8a8;
 }
-
 .fg input:focus,
 .fg select:focus,
 .fg textarea:focus {
   outline: none;
-  border-color: var(--cyan);
-  box-shadow: 0 0 0 3px rgba(0,245,255,0.08);
+  border-color: var(--coral);
+  box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.1);
 }
-
-.fg select option { background: #0D0D22; }
 
 .submit {
   width: 100%;
@@ -116,39 +127,53 @@
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  background: linear-gradient(135deg, var(--cyan), var(--purple));
-  color: #000;
-  font-family: 'Space Grotesk', sans-serif;
+  background: var(--coral);
+  color: #fff;
+  font-family: "Nunito", sans-serif;
   font-size: 0.95rem;
-  font-weight: 700;
-  transition: all 0.2s;
+  font-weight: 800;
+  transition: all 0.15s;
   margin-top: 6px;
-  letter-spacing: 0.02em;
 }
 .submit:hover {
-  opacity: 0.85;
-  transform: translateY(-1px);
-  box-shadow: 0 8px 32px rgba(0,245,255,0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 7px 0 #c94530;
+}
+.submit:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 0 #c94530;
+}
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-/* Success state */
 .success {
   text-align: center;
   padding: 40px 20px;
 }
 .successIcon {
-  font-size: 2.5rem;
-  color: var(--cyan);
+  font-size: 3rem;
   margin-bottom: 16px;
 }
 .success h4 {
-  font-family: 'Orbitron', monospace;
-  font-size: 1.2rem;
+  font-family: "Fredoka One", cursive;
+  font-size: 1.4rem;
   margin-bottom: 10px;
+  color: var(--mint);
 }
-.success p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
+.success p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-weight: 600;
+}
 
 @media (max-width: 900px) {
-  .inner { grid-template-columns: 1fr; }
-  .row { grid-template-columns: 1fr; }
+  .inner {
+    grid-template-columns: 1fr;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
 }

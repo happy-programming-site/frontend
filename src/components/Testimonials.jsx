@@ -6,7 +6,7 @@ const TESTIMONIALS = [
     name: 'Jamie L.',
     info: 'Grade 11 · AI & ML Course',
     initials: 'JL',
-    gradient: 'linear-gradient(135deg, #FF2D9B, #9B5DFF)',
+    gradient: 'linear-gradient(135deg, #FF6BA8, #9B6BFF)',
     featured: false,
   },
   {
@@ -14,7 +14,7 @@ const TESTIMONIALS = [
     name: 'Maya K.',
     info: 'Grade 10 · Web Dev Course',
     initials: 'MK',
-    gradient: 'linear-gradient(135deg, #00F5FF, #9B5DFF)',
+    gradient: 'linear-gradient(135deg, #FF6B4A, #FF9F1C)',
     featured: true,
   },
   {
@@ -22,7 +22,7 @@ const TESTIMONIALS = [
     name: 'Ryan T.',
     info: 'Grade 12 · Generative AI',
     initials: 'RT',
-    gradient: 'linear-gradient(135deg, #9B5DFF, #FF2D9B)',
+    gradient: 'linear-gradient(135deg, #4A8FE2, #2DCB85)',
     featured: false,
   },
 ]
