@@ -18,7 +18,7 @@ function HomePage() {
         entries.forEach((e) => {
           if (e.isIntersecting) e.target.classList.add("visible");
         }),
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
     const els = document.querySelectorAll(".reveal");
     els.forEach((el) => observer.observe(el));
@@ -40,11 +40,9 @@ function HomePage() {
   );
 }
 
-
-
 export default function App() {
   return (
-    <BrowserRouter basename="/frontend">
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/enroll/:courseTitle' element={<EnrollPage />} />
