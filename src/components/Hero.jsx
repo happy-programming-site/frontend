@@ -85,9 +85,13 @@ export default function Hero() {
             <span className='grad-text'>Happy Programming</span>
           </h1>
           <p className={styles.sub}>
-            Learn to code. Build with AI. Shape the future. Our programs turn
-            curious high schoolers into confident builders — through real
-            projects and expert mentors.
+            Happy Programming was founded by experienced engineers and educators
+            with a shared belief: every school student deserves access to
+            world-class technology education. We empower students to develop
+            strong analytical thinking, cultivate curiosity, unlock their
+            potential, and create innovative ideas—preparing them to confidently
+            navigate the rapidly changing world of technology and inspiring them
+            to use their talents to contribute to a better world.
           </p>
           <div className={styles.actions}>
             <a href='#courses' className='btn-primary'>
