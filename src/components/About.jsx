@@ -49,8 +49,13 @@ export default function About() {
           <div className='section-label'>About Us</div>
           <h2>Built for the Next Generation of Builders</h2>
           <p className='section-sub'>
-            Happy Programming was founded by engineers and educators who believe
-            every high schooler deserves access to world-class tech education.
+            Happy Programming was founded by experienced engineers and educators
+            with a shared belief: every school student deserves access to
+            world-class technology education. We empower students to develop
+            strong analytical thinking, cultivate curiosity, unlock their
+            potential, and create innovative ideas—preparing them to confidently
+            navigate the rapidly changing world of technology and inspiring them
+            to use their talents to contribute to a better world.
           </p>
           <div className={styles.features}>
             {FEATURES.map((f) => (
