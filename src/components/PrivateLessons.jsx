@@ -5,25 +5,29 @@ const FEATURES = [
     icon: "🎯",
     title: "Fully Personalized",
     desc: "Sessions are tailored entirely to your goals, pace, and project — no fixed curriculum.",
-    color: "#FF6B4A", bg: "rgba(255,107,74,0.1)",
+    color: "#FF6B4A",
+    bg: "rgba(255,107,74,0.1)",
   },
   {
     icon: "🗓️",
     title: "Flexible Scheduling",
     desc: "Book sessions when it suits you — evenings, weekends, or after school.",
-    color: "#4A8FE2", bg: "rgba(74,143,226,0.1)",
+    color: "#4A8FE2",
+    bg: "rgba(74,143,226,0.1)",
   },
   {
     icon: "⚡",
     title: "Expert Instructors",
     desc: "Work directly with engineers who build AI and software for a living.",
-    color: "#FFD23F", bg: "rgba(255,210,63,0.1)",
+    color: "#FFD23F",
+    bg: "rgba(255,210,63,0.1)",
   },
   {
     icon: "📁",
     title: "Session Resources",
     desc: "Every session ends with notes, code snippets, and resources to keep you progressing.",
-    color: "#2DCB85", bg: "rgba(45,203,133,0.1)",
+    color: "#2DCB85",
+    bg: "rgba(45,203,133,0.1)",
   },
 ];
 
@@ -41,7 +45,12 @@ export default function PrivateLessons() {
           <div className={styles.features}>
             {FEATURES.map((f) => (
               <div key={f.title} className={styles.feat}>
-                <div className={styles.featIcon} style={{ background: f.bg, borderColor: f.color }}>{f.icon}</div>
+                <div
+                  className={styles.featIcon}
+                  style={{ background: f.bg, borderColor: f.color }}
+                >
+                  {f.icon}
+                </div>
                 <div>
                   <h4>{f.title}</h4>
                   <p>{f.desc}</p>
@@ -63,7 +72,7 @@ export default function PrivateLessons() {
             <div className={styles.detailsGrid}>
               {[
                 ["Duration", "1 hr"],
-                ["Rate", "$200"],
+                ["Rate", "$100"],
                 ["Format", "Online / In-person"],
                 ["Topics", "Any"],
               ].map(([label, val]) => (
