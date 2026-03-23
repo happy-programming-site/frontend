@@ -22,8 +22,12 @@ export default function Courses() {
             <span className={styles.summerLink}>2026 Summer Camp</span>{" "}
           </div>
           <p className='section-sub'>
-            Every course is project-based and taught by working engineers,
-            research scientist, and university professors. No boring lectures.
+            At Happy Programming, every course is project-based and led by
+            experienced engineers, research scientists, and university
+            professors. Carefully designed for students of all ages and
+            backgrounds, our programs blend fun, deep learning, inspiration, and
+            cutting-edge technology—creating an engaging, hands-on experience
+            with no boring lectures, only meaningful learning.
           </p>
         </div>
         <div className={styles.enrollDropdown}>
