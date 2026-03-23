@@ -164,3 +164,18 @@ h2 {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* 初始状态：隐藏 */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+/* 触发后：显示 */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

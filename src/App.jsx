@@ -10,23 +10,42 @@ import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import EnrollPage from "./components/EnrollPage";
+import LoadingScreen from "./components/LoadingScreen";
 
 function HomePage() {
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) =>
+  //       entries.forEach((e) => {
+  //         if (e.isIntersecting) e.target.classList.add("visible");
+  //       }),
+  //     { threshold: 0.1 },
+  //   );
+  //   const els = document.querySelectorAll(".reveal");
+  //   els.forEach((el) => observer.observe(el));
+  //   return () => observer.disconnect();
+  // }, []);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (e.isIntersecting) e.target.classList.add("visible");
-        }),
-      { threshold: 0.1 },
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      { threshold: 0.15 },
     );
-    const els = document.querySelectorAll(".reveal");
-    els.forEach((el) => observer.observe(el));
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
     return () => observer.disconnect();
   }, []);
 
   return (
     <>
+      <LoadingScreen />
       <Navbar />
       <Courses />
       <Hero />
