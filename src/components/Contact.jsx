@@ -9,9 +9,9 @@ const INFO = [
     value:
       "0.3 mile to Longfellow Middle school, Falls Church, VA, 22043 · Also fully online",
   },
-  { icon: "📧", label: "Email", value: "hello@happyaiacademy.com" },
-  { icon: "📞", label: "Phone", value: "(703) 555-0192" },
-  { icon: "🕐", label: "Hours", value: "Mon–Fri · 9am–6pm EST" },
+  { icon: "📧", label: "Email", value: "happyprogramming.us@gmail.com" },
+  { icon: "📞", label: "Phone", value: "(703) 300-0061" },
+  { icon: "🕐", label: "Hours", value: "Mon–Fri · 10am–6pm EST" },
 ];
 
 export default function Contact() {
@@ -168,10 +168,12 @@ export default function Contact() {
                   <option value=''>Select...</option>
                   <option>Intro to Python</option>
                   <option>Intro to Java</option>
-                  <option>AI for Fun</option>
+                  <option>AI Camp I - AI explore</option>
                   <option>AI Camp I - Computer Vision</option>
-                  <option>AI Camp II - Generative AI (LLM)</option>
+                  <option>AI Camp III - Generative AI (LLM)</option>
+                  <option>Research Camp</option>
                   <option>Private Lessons</option>
+                  <option>Others</option>
                 </select>
               </div>
               <div className={styles.fg}>
@@ -190,7 +192,7 @@ export default function Contact() {
                 className={styles.submit}
                 disabled={loading}
               >
-                {loading ? "Registering..." : "Register Now 🚀"}
+                {loading ? "Sending..." : "Send Message 🚀"}
               </button>
             </form>
           )}

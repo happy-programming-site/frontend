@@ -117,9 +117,9 @@ export const COURSES = [
     slots: [
       {
         id: "llm-a",
-        label: "Full day",
-        time: "10:00 AM – 5:00 PM",
-        dates: "Jun 29 – Jul 3",
+        label: "",
+        time: "2:00 PM – 5:00 PM",
+        dates: "Jun 21 – Aug 23",
       },
     ],
   },

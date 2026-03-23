@@ -79,7 +79,7 @@ export default function Hero() {
         <div className={styles.content}>
           <div className={styles.tag}>
             <span className={styles.tagDot} />
-            DMV area · For High School Students
+            DMV area · For Middle and High School Students Or Virtual
           </div>
           <h1 className={styles.h1}>
             <span className='grad-text'>Happy Programming</span>
