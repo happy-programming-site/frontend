@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Navbar.module.css";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -22,6 +23,10 @@ export default function Navbar() {
           </a>
         </li>
         <li>
+          <Link to='/classes'>📚 Classes</Link>
+        </li>{" "}
+        {/* ← added */}
+        <li>
           <a href='#private'>Private</a>
         </li>
         <li>
@@ -32,9 +37,15 @@ export default function Navbar() {
         </li>
       </ul>
 
-      <a href='#contact' className={styles.cta}>
-        Contact Us
-      </a>
+      {/* Desktop right side buttons */}
+      <div className={styles.navRight}>
+        <a href='#contact' className={styles.cta}>
+          Contact Us
+        </a>
+        <Link to='/teacher/login' className={styles.teacherBtn}>
+          👩‍🏫 Teacher Login
+        </Link>
+      </div>
 
       {/* Hamburger button */}
       <button className={styles.hamburger} onClick={() => setOpen(!open)}>
@@ -48,6 +59,10 @@ export default function Navbar() {
             <a href='#courses'>🔥 2026 Summer Camp</a>
           </li>
           <li>
+            <Link to='/classes'>📚 Classes</Link>
+          </li>{" "}
+          {/* ← added */}
+          <li>
             <a href='#private'>Private</a>
           </li>
           <li>
@@ -58,6 +73,9 @@ export default function Navbar() {
           </li>
           <li>
             <a href='#contact'>Contact Us</a>
+          </li>
+          <li>
+            <Link to='/teacher/login'>👩‍🏫 Teacher Login</Link>
           </li>
         </ul>
       )}

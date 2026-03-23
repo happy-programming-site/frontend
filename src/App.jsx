@@ -12,6 +12,12 @@ import Footer from "./components/Footer";
 import EnrollPage from "./components/EnrollPage";
 import LoadingScreen from "./components/LoadingScreen";
 
+import TeacherRegister from "./components/TeacherRegister";
+import TeacherLogin from "./components/TeacherLogin";
+import TeacherDashboard from "./components/TeacherDashboard";
+import CreateClass from "./components/CreateClass";
+import ClassListing from "./components/ClassListing";
+
 function HomePage() {
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
@@ -63,8 +69,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/teacher/register' element={<TeacherRegister />} />
+        <Route path='/teacher/login' element={<TeacherLogin />} />
+        <Route path='/teacher/dashboard' element={<TeacherDashboard />} />;
         <Route path='/' element={<HomePage />} />
         <Route path='/enroll/:courseTitle' element={<EnrollPage />} />
+        <Route path='/teacher/create-class' element={<CreateClass />} />
+        <Route path='/classes' element={<ClassListing />} />
       </Routes>
     </BrowserRouter>
   );
