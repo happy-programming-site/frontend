@@ -32,7 +32,7 @@ export default function Courses() {
             value={selectedCourse}
             onChange={(e) => setSelectedCourse(e.target.value)}
           >
-            <option value="">View All Courses</option>
+            <option value=''>View All Courses</option>
             {COURSES.map((c) => (
               <option key={c.title} value={c.title}>
                 {c.icon} {c.title}

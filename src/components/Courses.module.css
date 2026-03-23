@@ -19,10 +19,12 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  /* 3 columns and as many rows as needed (e.g. 2 rows for 6 items) */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
+  grid-auto-rows: auto;
 }
 
 .card {
@@ -161,7 +163,6 @@
     filter: brightness(0.75);
   }
 }
-
 
 .enrollDropdown {
   display: flex;

@@ -9,8 +9,18 @@ export const COURSES = [
     price: "$1200",
     line: "linear-gradient(90deg, #2DCB85, #4A8FE2)",
     slots: [
-      { id: "py-a", label: "Morning session", time: "10:00 AM – 1:00 PM", dates: "Jun 22 – Jun 26" },
-      { id: "py-b", label: "Afternoon session", time: "2:00 PM – 5:00 PM", dates: "Jun 22 – Jun 26" },
+      {
+        id: "py-a",
+        label: "Morning session",
+        time: "10:00 AM – 1:00 PM",
+        dates: "Jun 22 – Jun 26",
+      },
+      {
+        id: "py-b",
+        label: "Afternoon session",
+        time: "2:00 PM – 5:00 PM",
+        dates: "Jun 22 – Jun 26",
+      },
     ],
   },
   {
@@ -23,8 +33,18 @@ export const COURSES = [
     price: "$1200",
     line: "linear-gradient(90deg, #4A8FE2, #9B6BFF)",
     slots: [
-      { id: "java-a", label: "Morning session", time: "10:00 AM – 1:00 PM", dates: "Jun 29 – Jul 3" },
-      { id: "java-b", label: "Afternoon session", time: "2:00 PM – 5:00 PM", dates: "Jun 29 – Jul 3" },
+      {
+        id: "java-a",
+        label: "Morning session",
+        time: "10:00 AM – 1:00 PM",
+        dates: "Jun 29 – Jul 3",
+      },
+      {
+        id: "java-b",
+        label: "Afternoon session",
+        time: "2:00 PM – 5:00 PM",
+        dates: "Jun 29 – Jul 3",
+      },
     ],
   },
   {
@@ -38,7 +58,12 @@ export const COURSES = [
     price: "$1300",
     line: "linear-gradient(90deg, #FF9F1C, #FF6B4A)",
     slots: [
-      { id: "ai1-a", label: "Full day", time: "10:00 AM – 5:00 PM", dates: "Jun 29 – Jul 3" },
+      {
+        id: "ai1-a",
+        label: "Full day",
+        time: "10:00 AM – 5:00 PM",
+        dates: "Jun 29 – Jul 3",
+      },
     ],
   },
   {
@@ -46,13 +71,18 @@ export const COURSES = [
     level: "Intermediate",
     levelClass: "begin",
     title: "AI Camp II - Computer Vision",
-    desc: "Teaches algorithms to interpret and understand visual data (images/videos), mimicking human sight to recognize objects, people, and scenes.",
+    desc: "Students learn how machines “see” and interpret the visual world. With hands-on guidance, they build projects that bring these ideas to life, from recognizing objects to analyzing real-world images. More importantly, students gain confidence in tackling complex problems and develop a deeper curiosity about how technology works.",
     meta: "Python coding experience required",
     time: "10:00AM-5:00PM, Jun 29 - July 3",
     price: "$1500",
     line: "linear-gradient(90deg, #9B6BFF, #FF6BA8)",
     slots: [
-      { id: "cv-a", label: "Full day", time: "10:00 AM – 5:00 PM", dates: "Jun 29 – Jul 3" },
+      {
+        id: "cv-a",
+        label: "Full day",
+        time: "10:00 AM – 5:00 PM",
+        dates: "Jun 29 – Jul 3",
+      },
     ],
   },
   {
@@ -60,13 +90,37 @@ export const COURSES = [
     level: "Advanced",
     levelClass: "adv",
     title: "AI Camp III - Generative AI (LLM)",
-    desc: "Build with LLMs, image generators, and AI APIs. Create projects that impress any admissions officer.",
+    desc: "Students explore how Large Language Models power today’s AI systems and learn to build their own AI applications. Through hands-on projects, they create tools like chatbots and AI assistants while developing practical skills in prompt engineering and AI design.",
     meta: "Python coding experience required",
     time: "10:00AM-5:00PM, Jun 29 - July 3",
     price: "$1500",
     line: "linear-gradient(90deg, #FF6B4A, #FF6BA8)",
     slots: [
-      { id: "llm-a", label: "Full day", time: "10:00 AM – 5:00 PM", dates: "Jun 29 – Jul 3" },
+      {
+        id: "llm-a",
+        label: "Full day",
+        time: "10:00 AM – 5:00 PM",
+        dates: "Jun 29 – Jul 3",
+      },
+    ],
+  },
+  {
+    icon: "🤖",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "Research Camp",
+    desc: "Take your students' learning to the next level with our advanced Research Camp. Students explore computer vision and generative AI through hands-on projects, gaining real research experience. By the end of the program, each student produces a science fair–ready paper—an achievement that builds confidence and strengthens academic portfolios.",
+    meta: "Python coding experience required",
+    time: "Sunday, 2PM-5PM, Jun 21- Aug 23",
+    price: "$3000",
+    line: "linear-gradient(90deg, #FF6B4A, #FF6BA8)",
+    slots: [
+      {
+        id: "llm-a",
+        label: "Full day",
+        time: "10:00 AM – 5:00 PM",
+        dates: "Jun 29 – Jul 3",
+      },
     ],
   },
 ];
