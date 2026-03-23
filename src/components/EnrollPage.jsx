@@ -84,28 +84,25 @@ export default function EnrollPage() {
         "service_1ap8j5m",
         "template_j5m56lk",
         {
-          // Student info
+          // existing fields...
           student_name: `${form.studentFirstName} ${form.studentLastName}`,
           student_grade: form.studentGrade,
-
-          // Parent info
           parent_name: form.parentName,
           parent_email: form.parentEmail,
           parent_phone: form.parentPhone,
-
-          // Course info
           course_title: course.title,
           course_price: course.price,
-
-          // Selected slot
           slot_label: slot.label,
           slot_time: slot.time,
           slot_dates: slot.dates,
-
-          // Payment
           payment_method: paymentMethod.label,
           payment_detail: paymentMethod.detail,
+
+          // ADD THESE to match your template's From Name + Reply To:
+          name: form.parentName,
+          email: form.parentEmail,
         },
+
         "JONB48oxCEi-3bv9i",
       );
       setSubmitted(true);
