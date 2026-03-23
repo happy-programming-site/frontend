@@ -31,6 +31,9 @@ export default function TeacherLogin() {
   return (
     <div className={styles.page}>
       <div className={styles.card}>
+        <button className={styles.closeBtn} onClick={() => navigate(-1)}>
+          ✕
+        </button>
         <h1 className={styles.title}>👩‍🏫 Teacher Login</h1>
         <p className={styles.sub}>Welcome back to Happy Programming</p>
 

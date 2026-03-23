@@ -50,6 +50,9 @@ export default function TeacherRegister() {
   return (
     <div className={styles.page}>
       <div className={styles.card}>
+        <button className={styles.closeBtn} onClick={() => navigate(-1)}>
+          ✕
+        </button>
         <h1 className={styles.title}>👩‍🏫 Teacher Register</h1>
         <p className={styles.sub}>
           Create your Happy Programming teacher account

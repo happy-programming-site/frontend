@@ -152,3 +152,32 @@
   font-weight: 700;
   margin-top: 2px;
 }
+
+.card {
+  position: relative; /* make sure this is already set or add it */
+}
+
+.closeBtn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  font-family: "Nunito", sans-serif;
+}
+
+.closeBtn:hover {
+  border-color: var(--coral);
+  color: var(--coral);
+}
