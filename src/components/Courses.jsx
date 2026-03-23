@@ -22,8 +22,8 @@ export default function Courses() {
             <span className={styles.summerLink}>2026 Summer Camp</span>{" "}
           </div>
           <p className='section-sub'>
-            Every course is project-based and taught by working engineers. No
-            boring lectures.
+            Every course is project-based and taught by working engineers,
+            research scientist, and university professors. No boring lectures.
           </p>
         </div>
         <div className={styles.enrollDropdown}>
