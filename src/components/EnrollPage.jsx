@@ -82,7 +82,7 @@ export default function EnrollPage() {
     try {
       await emailjs.send(
         "service_1ap8j5m",
-        "template_hnijil2",
+        "template_j5m56lk",
         {
           // Student info
           student_name: `${form.studentFirstName} ${form.studentLastName}`,
