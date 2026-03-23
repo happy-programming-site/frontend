@@ -4,11 +4,11 @@ import styles from "./FAQ.module.css";
 const FAQS = [
   {
     q: "Do I need any prior experience to enroll?",
-    a: "Not at all! Our Beginner courses (Intro to Python, Web Development) are designed for students with zero experience. We start from the very basics and build up from there.",
+    a: "Not at all! Our Beginner courses (Intro to Python, Intro to Java, Web Development) are designed for students with zero experience. We start from the very basics and build up from there.",
   },
   {
     q: "What age group do you teach?",
-    a: "Our programs are designed for high school students in grades 9–12 (ages 14–18). All content, pacing, and projects are tailored to this age group.",
+    a: "Our programs are designed for middle and high school students in grades 7–12. All content, pacing, and projects are tailored to this age group.",
   },
   {
     q: "Are classes in-person or online?",
@@ -16,7 +16,7 @@ const FAQS = [
   },
   {
     q: "How many students are in each class?",
-    a: "We cap group courses at 12 students to ensure every student gets personal attention from the instructor. For private lessons, it's just you and your mentor.",
+    a: "We cap group courses at 8 students to ensure every student gets personal attention from the instructor. For private lessons, it's just you and your mentor.",
   },
   {
     q: "Will I get a certificate when I finish?",
