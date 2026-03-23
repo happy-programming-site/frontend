@@ -11,15 +11,15 @@ export const COURSES = [
     slots: [
       {
         id: "py-a",
-        label: "Morning session",
-        time: "10:00 AM – 1:00 PM",
+        label: "Full day",
+        time: "10:00 AM – 5:00 PM",
         dates: "Jun 22 – Jun 26",
       },
       {
         id: "py-b",
-        label: "Afternoon session",
+        label: "Half day",
         time: "2:00 PM – 5:00 PM",
-        dates: "Jun 22 – Jun 26",
+        dates: "Jun 22 – July 3",
       },
     ],
   },
@@ -35,15 +35,15 @@ export const COURSES = [
     slots: [
       {
         id: "java-a",
-        label: "Morning session",
-        time: "10:00 AM – 1:00 PM",
+        label: "Full day",
+        time: "10:00 AM – 5:00 PM",
         dates: "Jun 29 – Jul 3",
       },
       {
         id: "java-b",
-        label: "Afternoon session",
+        label: "Half day",
         time: "2:00 PM – 5:00 PM",
-        dates: "Jun 29 – Jul 3",
+        dates: "Jun 22 – Jul 3",
       },
     ],
   },
