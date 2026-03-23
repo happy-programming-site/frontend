@@ -17,6 +17,7 @@ import TeacherLogin from "./components/TeacherLogin";
 import TeacherDashboard from "./components/TeacherDashboard";
 import CreateClass from "./components/CreateClass";
 import ClassListing from "./components/ClassListing";
+import Classroom from "./components/Classroom";
 
 function HomePage() {
   // useEffect(() => {
@@ -76,6 +77,7 @@ export default function App() {
         <Route path='/enroll/:courseTitle' element={<EnrollPage />} />
         <Route path='/teacher/create-class' element={<CreateClass />} />
         <Route path='/classes' element={<ClassListing />} />
+        <Route path='/classroom/:classId' element={<Classroom />} />
       </Routes>
     </BrowserRouter>
   );
