@@ -65,6 +65,7 @@ export default function Courses() {
             </span>
             <h3>{c.title}</h3>
             <p>{c.desc}</p>
+            <p>Grade: {c.grade}</p>
             {c.time && <h6>{c.time}</h6>}
             {c.meta && <h6>{c.meta}</h6>}
             <div className={styles.footer}>
