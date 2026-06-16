@@ -6,7 +6,7 @@ export const COURSES = [
     title: "Robotics",
     desc: "Discover the exciting world of robotics, engineering, and artificial intelligence through hands-on projects and team challenges. Students will build and program robots, explore sensors and computer vision, and learn how autonomous systems interact with the world. Throughout the camp, participants will develop coding, problem-solving, and engineering skills while creating real-world robotics projects and competing in fun design challenges.",
     grade: "7 - 10",
-    time: "1:30PM-5:30PM, Jun 22 - Jun 26",
+    time: "1:30PM-5:30PM, Jun 29 - July 3",
     price: "$699",
     line: "linear-gradient(90deg, #2DCB85, #4A8FE2)",
     slots: [
@@ -25,7 +25,7 @@ export const COURSES = [
     title: "Intro to Python",
     desc: "Start your coding journey with Python, one of the world's most popular and beginner-friendly programming languages. In this hands-on camp, we will cover the essentials: variables and data types, control flow (if/else, loops), functions, and core data structures (lists, dictionaries). Students finish by building a small real-world project like a quiz game or expense tracker, leaving with both foundational skills and something to show for it.",
     grade: "7 - 9",
-    time: "1:30PM-5:30PM, Jun 22 - Jun 26",
+    time: "1:30PM-5:30PM, Jun 29 - July 3",
     price: "$699",
     line: "linear-gradient(90deg, #2DCB85, #4A8FE2)",
     slots: [
@@ -50,7 +50,7 @@ export const COURSES = [
     title: "Intro to Java",
     desc: "Learn the fundamentals of Java programming through hands-on coding exercises and engaging projects. Students will explore variables, loops, conditionals, methods, arrays, and object-oriented programming while developing problem-solving and computational thinking skills. The course concludes with a final project that helps students apply their knowledge and gain confidence building real-world applications.",
     grade: "7 - 9",
-    time: "1:30PM-5:30PM, Jun 22 - Jun 26",
+    time: "1:30PM-5:30PM, Jun 29 - July 3",
     price: "$699",
     line: "linear-gradient(90deg, #4A8FE2, #9B6BFF)",
     slots: [
@@ -97,7 +97,7 @@ export const COURSES = [
     desc: "Students learn how machines “see” and interpret the visual world. With hands-on guidance, they build projects that bring these ideas to life, from recognizing objects to analyzing real-world images. More importantly, students gain confidence in tackling complex problems and develop a deeper curiosity about how technology works.",
     meta: "Python coding experience required",
     grade: "9 - 11",
-    time: "1:30PM-5:30PM, Jun 29 - July 3",
+    time: "1:30PM-5:30PM, July 6 - July 10",
     price: "$899",
     line: "linear-gradient(90deg, #9B6BFF, #FF6BA8)",
     slots: [
