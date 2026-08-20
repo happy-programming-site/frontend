@@ -28,6 +28,11 @@ export default function Navbar() {
           <a href='#about'>About</a>
         </li>
         <li>
+          <a href='https://happyresearch.org/' target='_blank' rel='noreferrer'>
+            happy research
+          </a>
+        </li>
+        <li>
           <a href='#faq'>FAQ</a>
         </li>
       </ul>
@@ -52,6 +57,15 @@ export default function Navbar() {
           </li>
           <li>
             <a href='#about'>About</a>
+          </li>
+          <li>
+            <a
+              href='https://happyresearch.org/'
+              target='_blank'
+              rel='noreferrer'
+            >
+              happy research
+            </a>
           </li>
           <li>
             <a href='#faq'>FAQ</a>
