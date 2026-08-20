@@ -20,7 +20,7 @@
 .grid {
   display: grid;
   /* 3 columns and as many rows as needed (e.g. 2 rows for 6 items) */
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
