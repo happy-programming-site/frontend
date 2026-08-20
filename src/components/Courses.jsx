@@ -19,7 +19,9 @@ export default function Courses() {
         <div>
           <div className='section-label'>
             <span className={styles.fire}>🔥</span>
-            <span className={styles.summerLink}>2026 Summer Camp</span>{" "}
+            <span className={styles.summerLink}>
+              2026 Fall - 2027 Spring
+            </span>{" "}
           </div>
           <p className='section-sub'>
             At Happy Programming, every course is project-based and led by

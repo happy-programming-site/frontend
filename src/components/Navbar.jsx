@@ -18,7 +18,7 @@ export default function Navbar() {
             style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}
           >
             <span className={styles.fire}>🔥</span>
-            <span className={styles.summerLink}>2026 Summer Camp</span>
+            <span className={styles.summerLink}>2026 Fall - 2027 Spring</span>
           </a>
         </li>
         <li>
@@ -45,7 +45,7 @@ export default function Navbar() {
       {open && (
         <ul className={styles.mobileMenu} onClick={() => setOpen(false)}>
           <li>
-            <a href='#courses'>🔥 2026 Summer Camp</a>
+            <a href='#courses'>🔥 2026 Fall - 2027 Spring</a>
           </li>
           <li>
             <a href='#private'>Private</a>
