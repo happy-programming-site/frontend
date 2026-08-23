@@ -57,7 +57,7 @@ export const COURSES = [
     title: "Introduction to AI",
     desc: "Introduction to AI is a beginner-friendly course that introduces students to the exciting world of Artificial Intelligence. Students will learn how AI works, how computers can learn from data, and how AI is being used in everyday life. The course covers fundamental concepts such as machine learning, neural networks, computer vision, natural language processing, and generative AI. Through hands-on projects and real-world examples, students will have the opportunity to build simple AI applications and understand both the possibilities and challenges of AI.",
     grade: "7 - 9",
-    time: "Sunday 4:30PM-6:30PM, Sept 12, 2026 - Dec 6, 2026",
+    time: "Sunday 5:30PM-7:30PM, Sept 12, 2026 - Dec 6, 2026",
     price: "$1999",
     line: "linear-gradient(90deg, #2DCB85, #4A8FE2)",
     slots: [
