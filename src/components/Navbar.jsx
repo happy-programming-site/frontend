@@ -29,7 +29,7 @@ export default function Navbar() {
         </li>
         <li>
           <a href='https://happyresearch.org/' target='_blank' rel='noreferrer'>
-            happy research
+            happyResearch
           </a>
         </li>
         <li>
