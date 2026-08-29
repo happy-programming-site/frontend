@@ -8,7 +8,7 @@ const GRADES = ["7th", "8th", "9th", "10th", "11th", "12th"];
 
 const PAYMENT_METHODS = [
   { id: "zelle", label: "Zelle", detail: "703-300-0061" },
-  { id: "paypal", label: "PayPal", detail: "zhenhepan@gmail.com" },
+  { id: "paypal", label: "PayPal", detail: "happyprogramming.us@gmail.com" },
   {
     id: "check",
     label: "Check",
