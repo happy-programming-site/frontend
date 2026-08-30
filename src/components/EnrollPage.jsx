@@ -164,7 +164,7 @@ export default function EnrollPage() {
           <h1 className={styles.courseTitle}>{course.title}</h1>
           <p className={styles.courseDesc}>{course.desc}</p>
           {course.meta && <p className={styles.courseMeta}>⚠️ {course.meta}</p>}
-          <p className={styles.coursePrice}>{course.price}</p>
+          {course.price && <p className={styles.coursePrice}>{course.price}</p>}
         </div>
 
         {/* Slot selection */}
@@ -339,7 +339,9 @@ export default function EnrollPage() {
           style={{ "--line": course.line }}
           disabled={loading}
         >
-          {loading ? "Sending..." : `Confirm Enrollment · ${course.price}`}
+          {loading
+            ? "Sending..."
+            : `Confirm Enrollment${course.price ? ` · ${course.price}` : ""}`}
         </button>
       </div>
     </div>

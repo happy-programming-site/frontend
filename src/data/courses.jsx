@@ -1,3 +1,25 @@
+import biologyPoster from "../assets/course_posts/Biology.webp";
+import clinicPoster from "../assets/course_posts/Clinic.webp";
+import cybersecurityPoster from "../assets/course_posts/Cybersecurity.webp";
+import economyPoster from "../assets/course_posts/Economy.webp";
+import environmentalPoster from "../assets/course_posts/Environmental.webp";
+import musicPoster from "../assets/course_posts/Music.webp";
+import neurosciencePoster from "../assets/course_posts/Neuroscience.webp";
+import psychologyPoster from "../assets/course_posts/Psychology.webp";
+import publicHealthPoster from "../assets/course_posts/Public_Health.webp";
+import socialSciencePoster from "../assets/course_posts/Social_Science.webp";
+
+// Every Fall 2026 course offers the same four weekend time slots.
+const RESEARCH_DATES = "Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)";
+const CORE_DATES = "Sept 12, 2026 – Dec 6, 2026";
+const weekendSlots = (prefix, dates) => [
+  { id: `${prefix}-sat-2`, label: "Saturday", time: "2:00PM – 4:00PM", dates },
+  { id: `${prefix}-sat-4`, label: "Saturday", time: "4:00PM – 6:00PM", dates },
+  { id: `${prefix}-sun-2`, label: "Sunday", time: "2:00PM – 4:00PM", dates },
+  { id: `${prefix}-sun-4`, label: "Sunday", time: "4:00PM – 6:00PM", dates },
+];
+const researchSlots = (prefix) => weekendSlots(prefix, RESEARCH_DATES);
+
 export const COURSES = [
   {
     icon: "🐍",
@@ -6,22 +28,10 @@ export const COURSES = [
     title: "Introduction to Python",
     desc: "Start your coding journey with Python, one of the world's most popular and beginner-friendly programming languages. In this hands-on camp, we will cover the essentials: variables and data types, control flow (if/else, loops), functions, and core data structures (lists, dictionaries). Students finish by building a small real-world project like a quiz game or expense tracker, leaving with both foundational skills and something to show for it.",
     grade: "7 - 9",
-    time: "Saturday 2:00PM-3:50PM, Sept 12, 2026 - Dec 6, 2026",
+    time: "Saturday / Sunday · 2:00PM–4:00PM or 4:00PM–6:00PM · Sept 12 – Dec 6, 2026",
     price: "$1599",
     line: "linear-gradient(90deg, #2DCB85, #4A8FE2)",
-    slots: [
-      // {
-      //   id: "py-a",
-      //   label: "Full day",
-      //   time: "10:00 AM – 5:00 PM",
-      //   dates: "Jun 22 – Jun 26",
-      // },
-      {
-        id: "py-b",
-        time: "2:00PM – 3:50PM",
-        dates: "Sept 12, 2026 – Dec 6, 2026",
-      },
-    ],
+    slots: weekendSlots("py", CORE_DATES),
   },
 
   {
@@ -31,22 +41,10 @@ export const COURSES = [
     title: "Introduction to Java",
     desc: "Learn the fundamentals of Java programming through hands-on coding exercises and engaging projects. Students will explore variables, loops, conditionals, methods, arrays, and object-oriented programming while developing problem-solving and computational thinking skills. The course concludes with a final project that helps students apply their knowledge and gain confidence building real-world applications.",
     grade: "7 - 9",
-    time: "Saturday 2:00PM-3:50PM, Sept 12, 2026 - Dec 6, 2026",
+    time: "Saturday / Sunday · 2:00PM–4:00PM or 4:00PM–6:00PM · Sept 12 – Dec 6, 2026",
     price: "$1699",
     line: "linear-gradient(90deg, #4A8FE2, #9B6BFF)",
-    slots: [
-      // {
-      //   id: "java-a",
-      //   label: "Full day",
-      //   time: "10:00 AM – 5:00 PM",
-      //   dates: "Jun 29 – Jul 3",
-      // },
-      {
-        id: "py-b",
-        time: "2:00PM – 3:50PM",
-        dates: "Sept 12, 2026 – Dec 6, 2026",
-      },
-    ],
+    slots: weekendSlots("java", CORE_DATES),
   },
 
   {
@@ -55,22 +53,10 @@ export const COURSES = [
     title: "Introduction to AI",
     desc: "Introduction to AI is a beginner-friendly course that introduces students to the exciting world of Artificial Intelligence. Students will learn how AI works, how computers can learn from data, and how AI is being used in everyday life. The course covers fundamental concepts such as machine learning, neural networks, computer vision, natural language processing, and generative AI. Through hands-on projects and real-world examples, students will have the opportunity to build simple AI applications and understand both the possibilities and challenges of AI.",
     grade: "7 - 9",
-    time: "Saturday 4:00PM-6:00PM, Sept 12, 2026 - Dec 6, 2026",
+    time: "Saturday / Sunday · 2:00PM–4:00PM or 4:00PM–6:00PM · Sept 12 – Dec 6, 2026",
     price: "$1999",
     line: "linear-gradient(90deg, #2DCB85, #4A8FE2)",
-    slots: [
-      // {
-      //   id: "py-a",
-      //   label: "Full day",
-      //   time: "10:00 AM – 5:00 PM",
-      //   dates: "Jun 22 – Jun 26",
-      // },
-      {
-        id: "py-b",
-        time: "4:00PM – 6:00PM",
-        dates: "Sept 12, 2026 – Dec 6, 2026",
-      },
-    ],
+    slots: weekendSlots("ai", CORE_DATES),
   },
   // {
   //   icon: "🧠",
@@ -141,16 +127,159 @@ export const COURSES = [
     desc: "Take your students' learning to the next level with our advanced Research Camp. Students explore computer vision and generative AI through hands-on projects, gaining real research experience. By the end of the program, each student produces a science fair–ready project—an achievement that builds confidence and strengthens academic portfolios.",
     meta: "Python coding experience required",
     grade: "10 - 11",
-    time: "Saturday 4:00PM-6:00PM, Sept 12, 2026 - Dec 6, 2026",
+    time: "Saturday / Sunday · 2:00PM–4:00PM or 4:00PM–6:00PM · Sept 12 – Dec 6, 2026",
     price: "$2999",
     line: "linear-gradient(90deg, #FF6B4A, #FF6BA8)",
-    slots: [
-      {
-        id: "llm-a",
-        label: "",
-        time: "4:00PM–6:00PM",
-        dates: "Sept 12, 2026 – Dec 6, 2026",
-      },
-    ],
+    slots: weekendSlots("research", CORE_DATES),
+  },
+
+  {
+    icon: "🧬",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "AI for Biology, Bioinformatics and Biomedicine",
+    desc: "Apply AI and data science to solve critical problems in biology and biomedicine—cancer genomics, infectious disease, survival prediction, and brain-tumor imaging—and advance human health through innovation.",
+    meta: "Science Fair / Research Project",
+    grade: "9 - 11",
+    time: "Saturday / Sunday · Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)",
+    price: "$3499",
+    line: "linear-gradient(90deg, #9B6BFF, #FF6BA8)",
+    poster: biologyPoster,
+    slots: researchSlots("bio"),
+  },
+
+  {
+    icon: "🩺",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "AI for Clinic",
+    desc: "Explore how artificial intelligence is transforming healthcare: build doctor's assistants, analyze medical images, drive disease diagnosis, and design smart healthcare systems that improve patient care.",
+    meta: "Science Fair / Research Project",
+    grade: "9 - 11",
+    time: "Saturday / Sunday · Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)",
+    price: "$3499",
+    line: "linear-gradient(90deg, #2DCB85, #4A8FE2)",
+    poster: clinicPoster,
+    slots: researchSlots("clinic"),
+  },
+
+  {
+    icon: "🔐",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "Cyber Security, Network & Cloud Computing",
+    desc: "Explore the technologies that protect our digital world and power the cloud—AI-driven threat detection, zero-trust security, and network anomaly analysis—and create impactful research through hands-on projects.",
+    meta: "Science Fair / Research Project",
+    grade: "9 - 11",
+    time: "Saturday / Sunday · Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)",
+    price: "$3499",
+    line: "linear-gradient(90deg, #1E3A8A, #4A8FE2)",
+    poster: cybersecurityPoster,
+    slots: researchSlots("cyber"),
+  },
+
+  {
+    icon: "📈",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "AI for Economy and Finance",
+    desc: "Explore how AI and data science can solve real-world economic and financial challenges—labor-market disruption, fraud detection, affordable housing, and financial-stress nowcasting—for a better society.",
+    meta: "Science Fair / Research Project",
+    grade: "9 - 11",
+    time: "Saturday / Sunday · Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)",
+    price: "$3499",
+    line: "linear-gradient(90deg, #FF9F1C, #2DCB85)",
+    poster: economyPoster,
+    slots: researchSlots("econ"),
+  },
+
+  {
+    icon: "🌍",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "AI for Environmental Science, Geographical Sciences",
+    desc: "Use AI and data science to explore and solve real-world environmental and geographical challenges—deforestation and wildfire risk, urban heat islands, invasive species, water quality, and natural-disaster prediction.",
+    meta: "Science Fair / Research Project",
+    grade: "9 - 11",
+    time: "Saturday / Sunday · Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)",
+    price: "$3499",
+    line: "linear-gradient(90deg, #2DCB85, #4A8FE2)",
+    poster: environmentalPoster,
+    slots: researchSlots("env"),
+  },
+
+  {
+    icon: "🎵",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "AI and Music",
+    desc: "Discover how AI and music come together to inspire creativity and improve well-being: analyze music emotions, build recommendation systems, and investigate the connection between music and mental health.",
+    meta: "Science Fair / Research Project",
+    grade: "9 - 11",
+    time: "Saturday / Sunday · Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)",
+    price: "$3499",
+    line: "linear-gradient(90deg, #FF6BA8, #2DCB85)",
+    poster: musicPoster,
+    slots: researchSlots("music"),
+  },
+
+  {
+    icon: "🧠",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "AI Innovations in Neuroscience",
+    desc: "Explore how artificial intelligence is transforming our understanding of the brain. Work with real neuroscience datasets and modern AI tools in a hands-on research program that produces a science-fair poster.",
+    meta: "Science Fair / Research Project",
+    grade: "9 - 11",
+    time: "Saturday / Sunday · Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)",
+    price: "$3499",
+    line: "linear-gradient(90deg, #6D28D9, #2DCB85)",
+    poster: neurosciencePoster,
+    slots: researchSlots("neuro"),
+  },
+
+  {
+    icon: "💭",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "AI and Psychology",
+    desc: "Explore how AI can help us understand mental health and support well-being: analyze teen anxiety and stress, build depression-screening models, and study AI companionship and loneliness.",
+    meta: "Science Fair / Research Project",
+    grade: "9 - 11",
+    time: "Saturday / Sunday · Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)",
+    price: "$3499",
+    line: "linear-gradient(90deg, #2DCB85, #9B6BFF)",
+    poster: psychologyPoster,
+    slots: researchSlots("psych"),
+  },
+
+  {
+    icon: "🏥",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "AI in Public Health",
+    desc: "Use artificial intelligence to improve health outcomes and promote well-being: health-data analysis, disease prediction and prevention, and AI for mental health in communities.",
+    meta: "Science Fair / Research Project",
+    grade: "9 - 11",
+    time: "Saturday / Sunday · Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)",
+    price: "$3499",
+    line: "linear-gradient(90deg, #9B6BFF, #4A8FE2)",
+    poster: publicHealthPoster,
+    slots: researchSlots("pubhealth"),
+  },
+
+  {
+    icon: "⚖️",
+    level: "Advanced",
+    levelClass: "adv",
+    title: "AI and Social Science",
+    desc: "Explore how AI techniques help us understand and improve our society: fake-news detection, bias and fairness auditing, and social-media analysis of public opinion, trends, and behavior.",
+    meta: "Science Fair / Research Project",
+    grade: "9 - 11",
+    time: "Saturday / Sunday · Sept 20 – Dec 12, 2026 · 12 sessions (24 hrs)",
+    price: "$3499",
+    line: "linear-gradient(90deg, #FF9F1C, #9B6BFF)",
+    poster: socialSciencePoster,
+    slots: researchSlots("socsci"),
   },
 ];

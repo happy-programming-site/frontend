@@ -1,6 +1,7 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./Contact.module.css";
+import { COURSES } from "../data/courses";
 
 const INFO = [
   {
@@ -166,12 +167,9 @@ export default function Contact() {
                   required
                 >
                   <option value=''>Select...</option>
-                  <option>Intro to Python</option>
-                  <option>Intro to Java</option>
-                  <option>AI Camp I - AI explore</option>
-                  <option>AI Camp I - Computer Vision</option>
-                  <option>AI Camp III - Generative AI (LLM)</option>
-                  <option>Research Camp</option>
+                  {COURSES.map((c) => (
+                    <option key={c.title}>{c.title}</option>
+                  ))}
                   <option>Private Lessons</option>
                   <option>Others</option>
                 </select>

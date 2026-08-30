@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Courses.module.css";
 import { COURSES } from "../data/courses";
 
 export default function Courses() {
   const [selectedCourse, setSelectedCourse] = useState("");
+  const [lightbox, setLightbox] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const onKey = (e) => e.key === "Escape" && setLightbox(null);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightbox]);
 
   function handleEnroll() {
     if (selectedCourse) {
@@ -53,43 +61,114 @@ export default function Courses() {
         </div>
       </div>
       <div className={styles.grid}>
-        {COURSES.map((c) => (
-          <div
-            key={c.title}
-            className={`${styles.card} reveal`}
-            style={{ "--line": c.line }}
-          >
-            <div className={styles.icon}>{c.icon}</div>
-            <span className={`${styles.badge} ${styles[c.levelClass]}`}>
-              {c.level}
-            </span>
-            <h3>{c.title}</h3>
-            <p>{c.desc}</p>
-            <p>Grade: {c.grade}</p>
-            {c.time && <h6>{c.time}</h6>}
-            {c.meta && <h6>{c.meta}</h6>}
-            <div className={styles.footer}>
-              {c.price && (
-                <span
-                  style={{
-                    fontSize: "1.1rem",
-                    color: "var(--coral)",
-                    fontWeight: 800,
-                  }}
-                >
-                  price: {c.price}
-                </span>
-              )}
-              <Link
-                to={`/enroll/${encodeURIComponent(c.title)}`}
-                className={styles.link}
+        {COURSES.map((c) =>
+          c.poster ? (
+            <div
+              key={c.title}
+              className={`${styles.card} ${styles.posterCard} reveal`}
+              style={{ "--line": c.line }}
+            >
+              <button
+                type='button'
+                className={styles.posterBtn}
+                onClick={() => setLightbox(c)}
               >
-                Enroll →
-              </Link>
+                <img
+                  src={c.poster}
+                  alt={`${c.title} course flyer`}
+                  className={styles.posterImg}
+                  loading='lazy'
+                />
+                <span className={styles.posterZoom}>Click to enlarge</span>
+              </button>
+              <h3>{c.title}</h3>
+              <div className={styles.footer}>
+                {c.price && (
+                  <span
+                    style={{
+                      fontSize: "1.1rem",
+                      color: "var(--coral)",
+                      fontWeight: 800,
+                    }}
+                  >
+                    price: {c.price}
+                  </span>
+                )}
+                <Link
+                  to={`/enroll/${encodeURIComponent(c.title)}`}
+                  className={styles.link}
+                >
+                  Enroll →
+                </Link>
+              </div>
             </div>
-          </div>
-        ))}
+          ) : (
+            <div
+              key={c.title}
+              className={`${styles.card} reveal`}
+              style={{ "--line": c.line }}
+            >
+              <div className={styles.icon}>{c.icon}</div>
+              <span className={`${styles.badge} ${styles[c.levelClass]}`}>
+                {c.level}
+              </span>
+              <h3>{c.title}</h3>
+              <p>{c.desc}</p>
+              <p>Grade: {c.grade}</p>
+              {c.time && <h6>{c.time}</h6>}
+              {c.meta && <h6>{c.meta}</h6>}
+              <div className={styles.footer}>
+                {c.price && (
+                  <span
+                    style={{
+                      fontSize: "1.1rem",
+                      color: "var(--coral)",
+                      fontWeight: 800,
+                    }}
+                  >
+                    price: {c.price}
+                  </span>
+                )}
+                <Link
+                  to={`/enroll/${encodeURIComponent(c.title)}`}
+                  className={styles.link}
+                >
+                  Enroll →
+                </Link>
+              </div>
+            </div>
+          ),
+        )}
       </div>
+
+      {lightbox && (
+        <div
+          className={styles.lightbox}
+          onClick={() => setLightbox(null)}
+          role='dialog'
+          aria-modal='true'
+          aria-label={`${lightbox.title} course flyer`}
+        >
+          <div
+            className={styles.lightboxInner}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type='button'
+              className={styles.lightboxClose}
+              onClick={() => setLightbox(null)}
+              aria-label='Close'
+            >
+              ✕
+            </button>
+            <img
+              src={lightbox.poster}
+              alt={`${lightbox.title} course flyer`}
+              className={styles.lightboxImg}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
