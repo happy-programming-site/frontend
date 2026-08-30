@@ -1,19 +1,23 @@
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import {
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./Courses.module.css";
 import { COURSES } from "../data/courses";
 
 const ROTATE_MS = 3000; // advance one row every 3s
 const TRANSITION_MS = 450; // scroll animation length
-const VISIBLE_ROWS = 2;
-const PER_ROW = 2;
+const MOBILE_MQ = "(max-width: 768px)";
 
-// Group the courses into rows, then duplicate the set for a seamless loop.
-const ROWS = [];
-for (let i = 0; i < COURSES.length; i += PER_ROW) {
-  ROWS.push(COURSES.slice(i, i + PER_ROW));
-}
-const LOOP_ROWS = [...ROWS, ...ROWS];
+const chunk = (arr, size) => {
+  const out = [];
+  for (let i = 0; i < arr.length; i += size) out.push(arr.slice(i, i + size));
+  return out;
+};
 
 export default function Courses() {
   const [selectedCourse, setSelectedCourse] = useState("");
@@ -31,14 +35,44 @@ export default function Courses() {
     !!window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Measure the height of VISIBLE_ROWS rows (capped so tall poster rows
+  // On phones only one course fits per row, so advance one course at a time;
+  // on wider screens rows hold two courses.
+  const [perRow, setPerRow] = useState(() =>
+    typeof window !== "undefined" &&
+    window.matchMedia &&
+    window.matchMedia(MOBILE_MQ).matches
+      ? 1
+      : 2,
+  );
+  useEffect(() => {
+    if (!window.matchMedia) return;
+    const mq = window.matchMedia(MOBILE_MQ);
+    const onChange = () => setPerRow(mq.matches ? 1 : 2);
+    onChange();
+    mq.addEventListener?.("change", onChange);
+    return () => mq.removeEventListener?.("change", onChange);
+  }, []);
+
+  const rows = useMemo(() => chunk(COURSES, perRow), [perRow]);
+  const loopRows = useMemo(() => [...rows, ...rows], [rows]);
+  const visibleRows = perRow === 1 ? 3 : 2;
+
+  // Reset the carousel to the top whenever the grouping changes
+  // (the track remounts via key={perRow}, so refs re-attach on their own).
+  useEffect(() => {
+    setRow(0);
+    setAnimate(true);
+  }, [perRow]);
+
+  // Measure the height of `visibleRows` rows (capped so tall poster rows
   // don't make the window enormous).
   useLayoutEffect(() => {
     if (reducedMotion) return;
     const measure = () => {
       const els = rowRefs.current;
       if (!els[0]) return;
-      const bottom = els[VISIBLE_ROWS] || els[ROWS.length - 1];
+      const bottom = els[visibleRows] || els[rows.length - 1];
+      if (!bottom) return;
       const h = bottom.offsetTop - els[0].offsetTop;
       const cap = Math.round(window.innerHeight * 0.85);
       setViewportH(Math.min(h, cap));
@@ -51,7 +85,7 @@ export default function Courses() {
       ro.disconnect();
       window.removeEventListener("resize", measure);
     };
-  }, [reducedMotion]);
+  }, [reducedMotion, visibleRows, rows.length]);
 
   // Advance one row on an interval.
   useEffect(() => {
@@ -63,13 +97,13 @@ export default function Courses() {
   // After scrolling through one full set, jump back to the top with no
   // transition so the loop looks continuous.
   useEffect(() => {
-    if (row < ROWS.length) return;
+    if (row < rows.length) return;
     const t = setTimeout(() => {
       setAnimate(false);
-      setRow((r) => r - ROWS.length);
+      setRow((r) => r - rows.length);
     }, TRANSITION_MS + 20);
     return () => clearTimeout(t);
-  }, [row]);
+  }, [row, rows.length]);
 
   useEffect(() => {
     if (animate) return;
@@ -171,7 +205,7 @@ export default function Courses() {
       </div>
     );
 
-  const rowsToRender = reducedMotion ? ROWS : LOOP_ROWS;
+  const rowsToRender = reducedMotion ? rows : loopRows;
 
   return (
     <section id='courses' className={styles.section}>
@@ -221,6 +255,7 @@ export default function Courses() {
       >
         <div
           className={styles.track}
+          key={perRow}
           style={
             reducedMotion
               ? undefined
@@ -237,7 +272,7 @@ export default function Courses() {
               className={styles.carRow}
               key={ri}
               ref={(el) => (rowRefs.current[ri] = el)}
-              aria-hidden={ri >= ROWS.length ? "true" : undefined}
+              aria-hidden={ri >= rows.length ? "true" : undefined}
             >
               {r.map(renderCard)}
             </div>

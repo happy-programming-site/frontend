@@ -38,15 +38,15 @@
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0,
-    #000 3%,
-    #000 97%,
+    #000 14%,
+    #000 86%,
     transparent 100%
   );
   mask-image: linear-gradient(
     to bottom,
     transparent 0,
-    #000 3%,
-    #000 97%,
+    #000 14%,
+    #000 86%,
     transparent 100%
   );
 }
