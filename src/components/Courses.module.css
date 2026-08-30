@@ -1,5 +1,6 @@
 .section {
-  padding: 96px 6%;
+  /* extra top padding so the heading clears the fixed navbar */
+  padding: 150px 6% 96px;
   background: var(--surface);
   position: relative;
   z-index: 1;
@@ -398,7 +399,7 @@
 
 @media (max-width: 560px) {
   .section {
-    padding: 72px 4%;
+    padding: 118px 4% 72px;
   }
 
   .grid,

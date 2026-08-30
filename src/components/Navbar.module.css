@@ -27,14 +27,14 @@
 
 .links {
   display: flex;
-  gap: 28px;
+  gap: 34px;
   list-style: none;
 }
 
 .links a {
   text-decoration: none;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 700;
   transition: color 0.2s;
 }
@@ -45,9 +45,9 @@
 .cta {
   background: var(--coral);
   color: #fff;
-  padding: 10px 22px;
+  padding: 12px 26px;
   border-radius: 50px;
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 800;
   text-decoration: none;
   transition: all 0.15s;
@@ -133,7 +133,7 @@
 .mobileMenu a {
   text-decoration: none;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
