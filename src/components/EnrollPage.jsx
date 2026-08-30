@@ -34,6 +34,7 @@ export default function EnrollPage() {
     parentEmail: "",
     parentPhone: "",
     payment: "",
+    format: "inperson",
   });
   const [errors, setErrors] = useState({});
 
@@ -47,6 +48,11 @@ export default function EnrollPage() {
       </div>
     );
   }
+
+  const hasOnline = !!course.onlinePrice;
+  const activePrice =
+    hasOnline && form.format === "online" ? course.onlinePrice : course.price;
+  const formatLabel = form.format === "online" ? "Online" : "In-person";
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -91,7 +97,8 @@ export default function EnrollPage() {
           parent_email: form.parentEmail,
           parent_phone: form.parentPhone,
           course_title: course.title,
-          course_price: course.price,
+          course_price: activePrice,
+          class_format: formatLabel,
           slot_label: slot.label,
           slot_time: slot.time,
           slot_dates: slot.dates,
@@ -127,6 +134,11 @@ export default function EnrollPage() {
             <span>{slot.label}</span>
             <span>{slot.time}</span>
             <span>{slot.dates}</span>
+            {hasOnline && (
+              <span>
+                Format: {formatLabel} · {activePrice}
+              </span>
+            )}
             <span>
               Payment:{" "}
               {form.payment.charAt(0).toUpperCase() + form.payment.slice(1)}
@@ -164,8 +176,58 @@ export default function EnrollPage() {
           <h1 className={styles.courseTitle}>{course.title}</h1>
           <p className={styles.courseDesc}>{course.desc}</p>
           {course.meta && <p className={styles.courseMeta}>⚠️ {course.meta}</p>}
-          {course.price && <p className={styles.coursePrice}>{course.price}</p>}
+          {course.price && (
+            <p className={styles.coursePrice}>
+              {hasOnline
+                ? `In-person ${course.price} · Online ${course.onlinePrice}`
+                : course.price}
+            </p>
+          )}
         </div>
+
+        {/* Class format */}
+        {hasOnline && (
+          <>
+            <h2 className={styles.slotsHeading}>Class format</h2>
+            <div className={styles.slots}>
+              {[
+                {
+                  id: "inperson",
+                  label: "In-person",
+                  detail: `Falls Church, VA · ${course.price}`,
+                },
+                {
+                  id: "online",
+                  label: "Online",
+                  detail: `Live on Zoom · ${course.onlinePrice}`,
+                },
+              ].map((opt) => (
+                <label
+                  key={opt.id}
+                  className={`${styles.slot} ${form.format === opt.id ? styles.slotSelected : ""}`}
+                >
+                  <input
+                    type='radio'
+                    name='format'
+                    value={opt.id}
+                    checked={form.format === opt.id}
+                    onChange={handleChange}
+                    className={styles.radioInput}
+                  />
+                  <div className={styles.radioCircle}>
+                    {form.format === opt.id && (
+                      <div className={styles.radioDot} />
+                    )}
+                  </div>
+                  <div className={styles.slotInfo}>
+                    <span className={styles.slotLabel}>{opt.label}</span>
+                    <span className={styles.slotTime}>{opt.detail}</span>
+                  </div>
+                </label>
+              ))}
+            </div>
+          </>
+        )}
 
         {/* Slot selection */}
         <h2 className={styles.slotsHeading}>Choose a time slot</h2>
@@ -341,7 +403,7 @@ export default function EnrollPage() {
         >
           {loading
             ? "Sending..."
-            : `Confirm Enrollment${course.price ? ` · ${course.price}` : ""}`}
+            : `Confirm Enrollment${activePrice ? ` · ${activePrice}` : ""}`}
         </button>
       </div>
     </div>
