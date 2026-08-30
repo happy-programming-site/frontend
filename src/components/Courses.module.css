@@ -66,9 +66,18 @@
 
 .carRow {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* minmax(0,…) stops a wide card from pushing the 2nd column off-screen
+     (the carousel clips overflow) */
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
   align-items: start;
+}
+
+/* one course per row on phones/tablets */
+@media (max-width: 768px) {
+  .carRow {
+    grid-template-columns: 1fr;
+  }
 }
 
 .card {
