@@ -79,7 +79,7 @@ export default function Hero() {
         <div className={styles.content}>
           <div className={styles.tag}>
             <span className={styles.tagDot} />
-            DMV area · For Middle and High School Students Or Virtual
+            Northern VA · In-person or online · Middle &amp; high school
           </div>
           <h1 className={styles.h1}>
             <span className='grad-text'>Happy Programming</span>
@@ -100,7 +100,7 @@ export default function Hero() {
           <div className={styles.stats}>
             {[
               ["200+", "Students trained"],
-              ["12", "Courses"],
+              ["14", "Courses"],
               ["4.9★", "Avg rating"],
             ].map(([num, label]) => (
               <div key={label}>

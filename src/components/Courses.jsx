@@ -54,8 +54,13 @@ export default function Courses() {
   }, []);
 
   const rows = useMemo(() => chunk(COURSES, perRow), [perRow]);
-  const loopRows = useMemo(() => [...rows, ...rows], [rows]);
   const visibleRows = perRow === 1 ? 3 : 2;
+  // Only clone as many rows as the window shows — enough for a seamless
+  // wrap without tabbing through every course twice.
+  const loopRows = useMemo(
+    () => [...rows, ...rows.slice(0, visibleRows)],
+    [rows, visibleRows],
+  );
 
   // Reset the carousel to the top whenever the grouping changes
   // (the track remounts via key={perRow}, so refs re-attach on their own).
@@ -267,16 +272,20 @@ export default function Courses() {
                 }
           }
         >
-          {rowsToRender.map((r, ri) => (
-            <div
-              className={styles.carRow}
-              key={ri}
-              ref={(el) => (rowRefs.current[ri] = el)}
-              aria-hidden={ri >= rows.length ? "true" : undefined}
-            >
-              {r.map(renderCard)}
-            </div>
-          ))}
+          {rowsToRender.map((r, ri) => {
+            const clone = ri >= rows.length;
+            return (
+              <div
+                className={styles.carRow}
+                key={ri}
+                ref={(el) => (rowRefs.current[ri] = el)}
+                aria-hidden={clone ? "true" : undefined}
+                {...(clone ? { inert: "" } : {})}
+              >
+                {r.map(renderCard)}
+              </div>
+            );
+          })}
         </div>
       </div>
 

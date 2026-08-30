@@ -14,7 +14,7 @@ const FEATURES = [
   {
     icon: "🔬",
     title: "Small Cohorts",
-    desc: "Max 8 students per class so every student gets personal attention and support.",
+    desc: "Max 5 students per class so every student gets personal attention and support.",
   },
 ];
 
@@ -30,13 +30,13 @@ const STATS = [
     color: "purple",
   },
   {
-    num: "40+",
-    label: "Partner schools across the DC metro area",
+    num: "DMV",
+    label: "Students join us from across DC, Maryland & Virginia — and online",
     color: "pink",
   },
   {
     num: "100%",
-    label: "Of graduates finish with a real deployed project",
+    label: "Of graduates finish with a real project to show",
     color: "green",
   },
 ];

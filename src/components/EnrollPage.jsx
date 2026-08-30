@@ -194,7 +194,7 @@ export default function EnrollPage() {
                 {
                   id: "inperson",
                   label: "In-person",
-                  detail: `Falls Church, VA · ${course.price}`,
+                  detail: `McLean, VA · ${course.price}`,
                 },
                 {
                   id: "online",

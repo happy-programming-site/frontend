@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <nav className={styles.nav}>
-      <a href='#' className={styles.logo}>
+      <a href='/' className={styles.logo} aria-label='Happy Programming home'>
         <img src={logo} alt='Happy Programming' />
       </a>
 

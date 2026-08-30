@@ -40,7 +40,7 @@ export default function PrivateLessons() {
           <h2>One-on-One Mentorship</h2>
           <p className='section-sub'>
             For students who want personalized attention, faster progress, or
-            help with a specific school courses/tests, project or concept.
+            help with a specific school course, test, project, or concept.
           </p>
           <div className={styles.features}>
             {FEATURES.map((f) => (

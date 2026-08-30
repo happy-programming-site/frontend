@@ -8,7 +8,7 @@ const INFO = [
     icon: "📍",
     label: "Location",
     value:
-      "0.3 mile to Longfellow Middle school, Falls Church, VA, 22043 · Also fully online",
+      "McLean, VA — 0.3 mile from Longfellow Middle School · Also fully online",
   },
   { icon: "📧", label: "Email", value: "happyprogramming.us@gmail.com" },
   { icon: "📞", label: "Phone", value: "(703) 300-0061" },
