@@ -20,62 +20,17 @@
 
 .grid {
   display: grid;
-  /* 3 columns and as many rows as needed (e.g. 2 rows for 6 items) */
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  grid-auto-rows: auto;
-}
-
-/* --- Auto-rotating course carousel --- */
-.carousel {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  max-height: 85vh;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    #000 14%,
-    #000 86%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0,
-    #000 14%,
-    #000 86%,
-    transparent 100%
-  );
-}
-.carouselStatic {
-  max-height: none;
-  overflow: visible;
-  -webkit-mask-image: none;
-  mask-image: none;
-}
-
-.track {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  will-change: transform;
-}
-
-.carRow {
-  display: grid;
-  /* minmax(0,…) stops a wide card from pushing the 2nd column off-screen
-     (the carousel clips overflow) */
+  /* minmax(0,…) keeps a wide card from stretching its column */
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
   align-items: start;
 }
 
 /* one course per row on phones/tablets */
 @media (max-width: 768px) {
-  .carRow {
+  .grid {
     grid-template-columns: 1fr;
   }
 }
@@ -388,10 +343,6 @@
 }
 
 @media (max-width: 900px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .top {
     flex-direction: column;
     align-items: flex-start;
@@ -409,11 +360,6 @@
 @media (max-width: 560px) {
   .section {
     padding: 118px 4% 72px;
-  }
-
-  .grid,
-  .carRow {
-    grid-template-columns: 1fr;
   }
 
   .enrollDropdown {
