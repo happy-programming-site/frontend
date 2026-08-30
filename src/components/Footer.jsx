@@ -1,10 +1,11 @@
 import styles from "./Footer.module.css";
+import logo from "../assets/logo.png";
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <a href='#' className={styles.logo}>
-        Happy Programming
+        <img src={logo} alt='Happy Programming' />
       </a>
       <p>© 2026 Happy Programming · Falls Church, VA</p>
       <div className={styles.links}>

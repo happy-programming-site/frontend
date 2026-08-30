@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./LoadingScreen.module.css";
+import logo from "../assets/logo.png";
 
 export default function LoadingScreen() {
   const [hiding, setHiding] = useState(false);
@@ -18,7 +19,7 @@ export default function LoadingScreen() {
 
   return (
     <div className={`${styles.screen} ${hiding ? styles.hide : ""}`}>
-      <div className={styles.logo}>💻 Happy Programming</div>
+      <img className={styles.logo} src={logo} alt='Happy Programming' />
       <div className={styles.dots}>
         <span />
         <span />

@@ -20,10 +20,9 @@
 }
 
 .logo {
-  font-family: "Fredoka One", cursive;
-  font-size: 2rem;
-  color: var(--coral);
-  letter-spacing: 0.02em;
+  width: min(560px, 88vw);
+  height: auto;
+  display: block;
 }
 
 .dots {

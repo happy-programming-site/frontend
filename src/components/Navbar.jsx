@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./Navbar.module.css";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -7,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className={styles.nav}>
       <a href='#' className={styles.logo}>
-        Happy Programming
+        <img src={logo} alt='Happy Programming' />
       </a>
 
       {/* Desktop links */}

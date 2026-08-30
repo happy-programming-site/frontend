@@ -12,12 +12,17 @@
 }
 
 .logo {
-  font-family: 'Fredoka One', cursive;
-  font-size: 1.1rem;
-  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  color: var(--coral);
-  letter-spacing: 0.02em;
+}
+
+.logo img {
+  height: 56px;
+  width: auto;
+  display: block;
+  /* logo wordmark is dark; render it light on the dark footer */
+  filter: brightness(0) invert(1);
 }
 
 .footer p {

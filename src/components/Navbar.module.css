@@ -14,12 +14,15 @@
 }
 
 .logo {
-  font-family: "Fredoka One", cursive;
-  font-size: 1.3rem;
-  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
-  color: var(--coral);
-  letter-spacing: 0.02em;
+}
+
+.logo img {
+  height: 72px;
+  width: auto;
+  display: block;
 }
 
 .links {
@@ -98,6 +101,9 @@
 @media (max-width: 900px) {
   .links {
     display: none;
+  }
+  .logo img {
+    height: 56px;
   }
 }
 
